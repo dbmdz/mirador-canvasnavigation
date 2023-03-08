@@ -23,6 +23,9 @@ const config = {
   id: "demo",
   window: {
     allowFullscreen: true,
+    canvasNavigation: {
+      handleCanvasLabel: (canvasLabel) => `${canvasLabel}...`,
+    },
   },
   windows: [
     {
