@@ -54,7 +54,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     border: "transparent",
     borderRadius: "0 0 .5rem .5rem",
-    boxShadow: "0 5px 7px -1px rgba(0, 0, 0, 0.25)",
+    boxShadow: `0 5px 7px -1px ${
+      theme.palette.type === "dark" ? "rgb(0, 0, 0)" : "rgba(0, 0, 0, 0.25)"
+    }`,
     whiteSpace: "pre",
   },
   canvasPosition: {
