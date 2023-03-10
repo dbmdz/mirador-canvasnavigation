@@ -78,7 +78,10 @@ const useStyles = makeStyles((theme) => ({
   canvasLabel: {
     marginTop: "0.5em",
     minHeight: "1.125rem",
-    color: "#747474",
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.grey[300]
+        : theme.palette.grey[600],
     fontSize: "0.7rem",
     fontFamily: "sans-serif",
   },
