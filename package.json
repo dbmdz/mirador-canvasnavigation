@@ -13,6 +13,9 @@
   "repository": "https://github.com/dbmdz/mirador-canvasnavigation",
   "license": "MIT",
   "author": "Matthias Lindinger <matthias.lindinger@bsb-muenchen.de>",
+  "contributors": [
+    "Johannes Baiter <johannes.baiter@bsb-muenchen.de>"
+  ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
