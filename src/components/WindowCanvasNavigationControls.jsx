@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "0 0.5em",
     display: "flex",
     alignItems: "center",
-    fontFamily: "sans-serif",
+    fontFamily: theme.typography.fontFamily ?? "sans-serif",
   },
   squareButton: {
     borderRadius: 0,
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
         ? theme.palette.grey[300]
         : theme.palette.grey[600],
     fontSize: "0.7rem",
-    fontFamily: "sans-serif",
+    fontFamily: theme.typography.fontFamily ?? "sans-serif",
   },
   canvasInput: {
     marginLeft: "0.5rem",
