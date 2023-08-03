@@ -148,7 +148,7 @@ const WindowCanvasNavigationControls = ({
         classes.container,
         ns("canvas-nav"),
         targetProps.classes.canvasNav,
-        classes.canvasNav
+        classes.canvasNav,
       )}
       elevation={0}
       square
@@ -218,7 +218,7 @@ const WindowCanvasNavigationControls = ({
             aria-label={t("lastPage")}
             className={classNames(
               classes.squareButton,
-              classes.edgeButtonRight
+              classes.edgeButtonRight,
             )}
             disabled={!hasNextCanvas}
             onClick={() => setCanvasIndex(numCanvases - 1)}
