@@ -139,7 +139,10 @@ const WindowCanvasNavigationControls = ({
     setCanvasIndex(pendingCanvasIdx);
     setPendingCanvasIdx(undefined);
   };
-  const canvasLbl = handleCanvasLabel(canvasLabel, currentCanvasIndex);
+  const canvasLbl = handleCanvasLabel({
+    canvasLabel,
+    currentCanvasIndex,
+  });
   const inputId = `canvas-idx-${windowId}`;
   return (
     <Paper

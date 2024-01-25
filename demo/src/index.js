@@ -24,7 +24,7 @@ const config = {
   window: {
     allowFullscreen: true,
     canvasNavigation: {
-      handleCanvasLabel: (canvasLabel) => `${canvasLabel}...`,
+      handleCanvasLabel: ({ canvasLabel }) => `${canvasLabel}...`,
     },
   },
   windows: [
