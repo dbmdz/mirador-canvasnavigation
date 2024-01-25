@@ -117,6 +117,7 @@ const WindowCanvasNavigationControls = ({
   currentCanvasIndex,
   hasNextCanvas,
   hasPreviousCanvas,
+  manifestId,
   numCanvases,
   setCanvasIndex,
   setNextCanvas,
@@ -142,6 +143,7 @@ const WindowCanvasNavigationControls = ({
   const canvasLbl = handleCanvasLabel({
     canvasLabel,
     currentCanvasIndex,
+    manifestId,
   });
   const inputId = `canvas-idx-${windowId}`;
   return (
@@ -250,6 +252,7 @@ WindowCanvasNavigationControls.propTypes = {
   currentCanvasIndex: PropTypes.number.isRequired,
   hasNextCanvas: PropTypes.bool.isRequired,
   hasPreviousCanvas: PropTypes.bool.isRequired,
+  manifestId: PropTypes.string.isRequired,
   numCanvases: PropTypes.number.isRequired,
   setCanvasIndex: PropTypes.func.isRequired,
   setNextCanvas: PropTypes.func.isRequired,

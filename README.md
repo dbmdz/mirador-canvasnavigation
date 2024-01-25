@@ -67,6 +67,7 @@ The available settings are:
   {
     canvasLabel: ...,
     currentCanvasIndex: ...,
+    manifestId: ...,
   }
   ```
   Must return a string.

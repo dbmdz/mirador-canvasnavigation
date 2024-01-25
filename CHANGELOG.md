@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## [Unreleased]
 
+### Added
+
+- Added `manifestId` as parameter of `handleCanvasLabel`
+
 ### Changed
 
 - **Breaking**: Refactored the parameters of `handleCanvasLabel` to a map
