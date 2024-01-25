@@ -11,6 +11,7 @@ import {
   getCurrentCanvas,
   getNextCanvasGrouping,
   getPreviousCanvasGrouping,
+  getWindowManifests,
   getWindowViewType,
 } from "mirador/dist/es/src/state/selectors";
 
@@ -54,6 +55,7 @@ export default [
         hasPreviousCanvas: !!getPreviousCanvasGrouping(state, {
           windowId,
         }),
+        manifestId: getWindowManifests(state, { windowId })[0],
         numCanvases: canvases.length,
       };
     },
