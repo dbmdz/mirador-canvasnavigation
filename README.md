@@ -62,7 +62,13 @@ You can view an example configuration in [demo/src/index.js][demo-cfg].
 The available settings are:
 
 - `handleCanvasLabel`: A function that modifies the canvas label if needed, the default implementation does not change anything.
-  Receives the label of the current canvas as the first argument and the index of the current canvas as the second argument.
+  Receives this information about the current window:
+  ```
+  {
+    canvasLabel: ...,
+    currentCanvasIndex: ...,
+  }
+  ```
   Must return a string.
 
 ## Contributing
