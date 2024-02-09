@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## [Unreleased]
 
+## [0.2.1](https://github.com/dbmdz/mirador-canvasnavigation/releases/tag/0.2.1) - 2024-02-09
+
 ### Added
 
 - Added `canvasId` as parameter of `handleCanvasLabel`
