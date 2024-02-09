@@ -112,6 +112,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const WindowCanvasNavigationControls = ({
+  canvasId,
   canvasLabel,
   config: { handleCanvasLabel = (lbl) => lbl },
   currentCanvasIndex,
@@ -141,6 +142,7 @@ const WindowCanvasNavigationControls = ({
     setPendingCanvasIdx(undefined);
   };
   const canvasLbl = handleCanvasLabel({
+    canvasId,
     canvasLabel,
     currentCanvasIndex,
     manifestId,
@@ -245,6 +247,7 @@ const WindowCanvasNavigationControls = ({
 };
 
 WindowCanvasNavigationControls.propTypes = {
+  canvasId: PropTypes.string.isRequired,
   canvasLabel: PropTypes.string.isRequired,
   config: PropTypes.shape({
     handleCanvasLabel: PropTypes.func,
