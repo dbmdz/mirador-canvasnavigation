@@ -45,6 +45,7 @@ export default [
       const canvases = getCanvases(state, { windowId });
       const canvasId = (getCurrentCanvas(state, { windowId }) || {}).id;
       return {
+        canvasId,
         canvasLabel: getCanvasLabel(state, {
           canvasId,
           windowId,
