@@ -246,9 +246,14 @@ const WindowCanvasNavigationControls = ({
   );
 };
 
+WindowCanvasNavigationControls.defaultProps = {
+  canvasId: undefined,
+  canvasLabel: "",
+};
+
 WindowCanvasNavigationControls.propTypes = {
-  canvasId: PropTypes.string.isRequired,
-  canvasLabel: PropTypes.string.isRequired,
+  canvasId: PropTypes.string,
+  canvasLabel: PropTypes.string,
   config: PropTypes.shape({
     handleCanvasLabel: PropTypes.func,
   }).isRequired,
