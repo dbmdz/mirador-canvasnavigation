@@ -65,7 +65,7 @@ The available settings are:
   Receives this information about the current window:
   ```
   {
-    canvasId: ...,
+    canvasId: ..., // can be undefined
     canvasLabel: ...,
     currentCanvasIndex: ...,
     manifestId: ...,
