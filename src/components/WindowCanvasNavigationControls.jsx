@@ -180,7 +180,13 @@ const WindowCanvasNavigationControls = ({
           >
             <PreviousCanvasIcon />
           </MiradorMenuButton>
-          <label className={classes.canvasPosition} htmlFor={inputId}>
+          <label
+            className={classNames(
+              classes.canvasPosition,
+              ns("canvas-position"),
+            )}
+            htmlFor={inputId}
+          >
             {t("scan")}
             <input
               className={classes.canvasInput}

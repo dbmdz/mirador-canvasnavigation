@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## [Unreleased]
 
+### Added
+
+- Added custom CSS class
+
 ## [0.2.2](https://github.com/dbmdz/mirador-canvasnavigation/releases/tag/0.2.2) - 2024-02-21
 
 ### Fixed
