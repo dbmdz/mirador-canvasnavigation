@@ -3,7 +3,7 @@
 [![npm package][npm-badge]][npm]
 [![required Mirador version][mirador-badge]][mirador]
 
-A Mirador 3 plugin which replaces the builtin canvas navigation with an extended one containing the following functionalities:
+A Mirador 4 plugin which replaces the builtin canvas navigation with an extended one containing the following functionalities:
 
 - scroll to the first canvas
 - scroll to the previous canvas
@@ -54,6 +54,7 @@ const miradorConfig = {
       // config for an individual window, see available settings below
     },
   }, // ...
+  ]
 }
 ```
 
