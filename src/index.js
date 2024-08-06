@@ -1,8 +1,4 @@
-import {
-  setCanvas,
-  setNextCanvas,
-  setPreviousCanvas,
-} from "mirador/dist/es/src/state/actions";
+import { setCanvas, setNextCanvas, setPreviousCanvas } from 'mirador/dist/es/src/state/actions';
 import {
   getCanvases,
   getCanvasGroupings,
@@ -13,11 +9,11 @@ import {
   getPreviousCanvasGrouping,
   getWindowManifests,
   getWindowViewType,
-} from "mirador/dist/es/src/state/selectors";
+} from 'mirador/dist/es/src/state/selectors';
 
-import WindowCanvasNavigationControls from "./components/WindowCanvasNavigationControls";
-import translations from "./locales";
-import { getPluginConfig } from "./state/selectors";
+import WindowCanvasNavigationControls from './components/WindowCanvasNavigationControls';
+import translations from './locales';
+import { getPluginConfig } from './state/selectors';
 
 export default [
   {
@@ -30,8 +26,7 @@ export default [
         dispatch((_, getState) => {
           const allGroupings = getCanvasGroupings(getState(), { windowId });
           const viewType = getWindowViewType(getState(), { windowId });
-          const groupIndex =
-            viewType === "single" ? index : Math.ceil(index / 2);
+          const groupIndex = viewType === 'single' ? index : Math.ceil(index / 2);
           const newGroup = allGroupings?.[groupIndex];
           const ids = (newGroup || []).map((c) => c.id);
           if (newGroup) {
@@ -60,7 +55,7 @@ export default [
         numCanvases: canvases.length,
       };
     },
-    mode: "wrap",
-    target: "WindowCanvasNavigationControls",
+    mode: 'wrap',
+    target: 'WindowCanvasNavigationControls',
   },
 ];
