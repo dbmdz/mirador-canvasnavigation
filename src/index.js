@@ -11,6 +11,7 @@ import {
   getCurrentCanvas,
   getNextCanvasGrouping,
   getPreviousCanvasGrouping,
+  getWindow,
   getWindowManifests,
   getWindowViewType,
 } from "mirador/dist/es/src/state/selectors";
@@ -44,6 +45,7 @@ export default [
     mapStateToProps: (state, { windowId }) => {
       const canvases = getCanvases(state, { windowId });
       const canvasId = (getCurrentCanvas(state, { windowId }) || {}).id;
+      const {manifestId} = getWindow(state, {windowId})
       return {
         canvasId,
         canvasLabel: getCanvasLabel(state, {
@@ -56,7 +58,7 @@ export default [
         hasPreviousCanvas: !!getPreviousCanvasGrouping(state, {
           windowId,
         }),
-        manifestId: getWindowManifests(state, { windowId })[0],
+        manifestId,
         numCanvases: canvases.length,
       };
     },
