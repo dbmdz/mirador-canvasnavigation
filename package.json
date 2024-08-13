@@ -1,6 +1,6 @@
 {
   "name": "mirador-canvasnavigation",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Mirador 3 plugin to replace the builtin canvas navigation with an extended one",
   "keywords": [
     "iiif",
