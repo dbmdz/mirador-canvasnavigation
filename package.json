@@ -25,15 +25,8 @@
     "umd"
   ],
   "scripts": {
-    "build": "npm run build:umd",
-    "build:demo": "NODE_ENV=development webpack --mode=development",
-    "build:umd": "NODE_ENV=production webpack --mode=production",
-    "build:es": "mkdir -p es && cp -r src/* es && NODE_ENV=production MODULE_FORMAT=es npx babel es -d es",
-    "build:cjs": "mkdir -p lib && cp -r src/* lib && NODE_ENV=production MODULE_FORMAT=cjs npx babel lib -d lib",
     "format": "eslint --fix ./demo/src ./src",
-    "lint": "eslint ./demo/src ./src",
-    "prepublishOnly": "npm run build",
-    "start": "NODE_ENV=development webpack serve --open"
+    "lint": "eslint ./demo/src ./src"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
