@@ -5,6 +5,3 @@
 /node_modules
 /umd
 npm-debug.log*
-.cache
-dist
-*.tgz
