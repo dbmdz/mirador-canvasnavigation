@@ -1,10 +1,9 @@
-import { getWindowConfig } from "mirador/dist/es/src/state/selectors";
-import { createSelector } from "reselect";
+import { getWindowConfig } from "mirador";
 
 /** Selector to get the plugin config for a given window */
-const getPluginConfig = createSelector(
-  [getWindowConfig],
-  ({ canvasNavigation = {} }) => canvasNavigation,
-);
+const getPluginConfig = (state, ownProps) => {
+  const { canvasNavigation = {} } = getWindowConfig(state, ownProps);
+  return { ...canvasNavigation };
+};
 
 export { getPluginConfig };
