@@ -16,7 +16,7 @@ const pluginConfig = {
       external: [
         /^@emotion\/(react|styled)/,
         /^@mui\/(material|system)/,
-        /^mirador\/dist/,
+        "mirador",
         "react",
         "react-dom",
         "react-i18next",
@@ -27,6 +27,9 @@ const pluginConfig = {
     },
   },
   plugins: [react(), dts({ include: ["src"], exclude: ["src/demo.js"]})],
+  server: {
+    open: true,
+  },
 };
 
 const demoConfig = {
@@ -39,6 +42,9 @@ const demoConfig = {
     },
   },
   plugins: [react()],
+  server: {
+    open: true,
+  },
 };
 
 export default defineConfig(buildMode !== "demo" ? pluginConfig : demoConfig);
