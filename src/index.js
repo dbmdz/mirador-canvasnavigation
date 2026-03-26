@@ -1,4 +1,3 @@
-import { setCanvas, setNextCanvas, setPreviousCanvas } from "mirador";
 import {
   getCanvases,
   getCanvasGroupings,
@@ -9,6 +8,9 @@ import {
   getPreviousCanvasGrouping,
   getWindow,
   getWindowViewType,
+  setCanvas,
+  setNextCanvas,
+  setPreviousCanvas,
 } from "mirador";
 
 import WindowCanvasNavigationControls from "./components/WindowCanvasNavigationControls";
