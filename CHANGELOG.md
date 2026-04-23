@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## Unreleased
 
+## [1.0.0](https://github.com/dbmdz/mirador-canvasnavigation/releases/tag/1.0.0) - 2026-04-23
+
 ### Changed
 
 - **Breaking**: Upgrade to Mirador 4
