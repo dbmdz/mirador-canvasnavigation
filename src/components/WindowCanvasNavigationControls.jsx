@@ -196,6 +196,7 @@ const WindowCanvasNavigationControls = ({
           <label
             className={classNames(
               classes.canvasPosition,
+              // FIXME: make prefix configurable again once mirador 4 exports `ns` function
               "mirador-canvas-position",
             )}
             htmlFor={inputId}
