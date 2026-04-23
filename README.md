@@ -27,7 +27,7 @@ import canvasNavigationPlugin from 'mirador-canvasnavigation';
 const miradorConfig = {
   // Your Mirador configuration
 }
-Mirador.viewer(config, [...canvasNavigationPlugin]);
+Mirador.viewer(miradorConfig, [...canvasNavigationPlugin]);
 ```
 
 ## Configuration
