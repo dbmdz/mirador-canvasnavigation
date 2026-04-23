@@ -1,6 +1,6 @@
-import Mirador from "mirador/dist/es/src/index";
+import Mirador from "mirador";
 
-import canvasNavigationPlugin from "../../src";
+import canvasNavigationPlugin from ".";
 
 const config = {
   catalog: [

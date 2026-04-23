@@ -1,42 +1,49 @@
-import Paper from "@material-ui/core/Paper";
-import makeStyles from "@material-ui/core/styles/makeStyles";
 import {
   ChevronLeft as PreviousCanvasIcon,
   ChevronRight as NextCanvasIcon,
   FirstPage as FirstCanvasIcon,
   LastPage as LastCanvasIcon,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
+import { Paper } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import classNames from "classnames";
-import ns from "mirador/dist/es/src/config/css-ns";
-import MiradorMenuButton from "mirador/dist/es/src/containers/MiradorMenuButton";
+import { MiradorMenuButton } from "mirador";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-/** Build CSS classes used by the component, taking into account the theme.
- *
- * For more information on the theme, check out the default theme (with light and dark variations)
- * on GitHub: https://github.com/ProjectMirador/mirador/blob/master/src/config/settings.js#L11-L217
- *
- * It's usually a good idea to rely at least on the palette (`theme.palette`) for color selection, this
- * should minimize the conflict with existing themes.
- *
- * The returned object maps class names to JSS (https://cssinjs.org/), these class names are keys in
- * the `classes` prop passed to the component and will resolve to the auto-generated CSS class name
- * at runtime.
- */
-const useStyles = makeStyles((theme) => ({
-  // We need to supply all the classes of the wrapped target compomnent, otherwise MUI will
+const PREFIX = "WindowCanvasNavigationControls";
+
+const classes = {
+  canvasNav: `${PREFIX}-canvasNav`,
+  container: `${PREFIX}-container`,
+  canvasFooter: `${PREFIX}-canvasFooter`,
+  navContainer: `${PREFIX}-navContainer`,
+  canvasPosition: `${PREFIX}-canvasPosition`,
+  squareButton: `${PREFIX}-squareButton`,
+  edgeButtonLeft: `${PREFIX}-edgeButtonLeft`,
+  edgeButtonRight: `${PREFIX}-edgeButtonRight`,
+  canvasLabel: `${PREFIX}-canvasLabel`,
+  canvasInput: `${PREFIX}-canvasInput`,
+};
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  // We need to supply all the classes of the wrapped target component, otherwise MUI will
   // complain a lot
-  canvasNav: {
+  [`&.${classes.canvasNav}`]: {
     // !important is needed since the parent component will override our style otherwise
     flexDirection: "column !important",
+    bottom: 0,
+    position: "absolute",
+    zIndex: 50,
+    width: "100%",
   },
-  container: {
+
+  [`&.${classes.container}`]: {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    // We need to use `!important` since the wrapped compoment's background color/flex direction will
+    // We need to use `!important` since the wrapped component's background color/flex direction will
     // take precedence otherwise
     backgroundColor: `${theme.palette.background.paper} !important`,
     paddingBottom: "0.25em",
@@ -44,11 +51,13 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "inset 0 10px 10px -10px rgba(0, 0, 0, 0.5)",
     fontSize: "medium",
   },
-  canvasFooter: {
+
+  [`& .${classes.canvasFooter}`]: {
     display: "flex",
     justifyContent: "center",
   },
-  navContainer: {
+
+  [`& .${classes.navContainer}`]: {
     display: "flex",
     justifyContent: "center",
     backgroundColor: theme.palette.background.paper,
@@ -59,25 +68,30 @@ const useStyles = makeStyles((theme) => ({
     }`,
     whiteSpace: "pre",
   },
-  canvasPosition: {
+
+  [`& .${classes.canvasPosition}`]: {
     padding: "0 0.5em",
     display: "flex",
     alignItems: "center",
     fontFamily: theme.typography.fontFamily ?? "sans-serif",
   },
-  squareButton: {
+
+  [`& .${classes.squareButton}`]: {
     borderRadius: 0,
     borderColor: "lightgrey",
     borderStyle: "solid",
     borderWidth: "0px 1px 0px 1px",
   },
-  edgeButtonLeft: {
+
+  [`& .${classes.edgeButtonLeft}`]: {
     borderWidth: "0",
   },
-  edgeButtonRight: {
+
+  [`& .${classes.edgeButtonRight}`]: {
     borderWidth: "0",
   },
-  canvasLabel: {
+
+  [`& .${classes.canvasLabel}`]: {
     marginTop: "0.5em",
     minHeight: "1.125rem",
     color:
@@ -86,8 +100,10 @@ const useStyles = makeStyles((theme) => ({
         : theme.palette.grey[600],
     fontSize: "0.7rem",
     fontFamily: theme.typography.fontFamily ?? "sans-serif",
+    textAlign: "center",
   },
-  canvasInput: {
+
+  [`& .${classes.canvasInput}`]: {
     marginLeft: "0.5rem",
     marginRight: "0.3rem",
     padding: "0 3px",
@@ -123,7 +139,6 @@ const WindowCanvasNavigationControls = ({
   setCanvasIndex,
   setNextCanvas,
   setPreviousCanvas,
-  targetProps,
   windowId,
 }) => {
   // We have to use a controlled component, since we want our canvas index input
@@ -132,7 +147,6 @@ const WindowCanvasNavigationControls = ({
   // while the user enters a number. So we tie it to an intermediary state variable
   // that gets reset whenever the change is committed
   const [pendingCanvasIdx, setPendingCanvasIdx] = useState();
-  const classes = useStyles({ currentCanvasIndex });
   const { t } = useTranslation();
   const onChangeCanvasIndex = () => {
     if (pendingCanvasIdx === currentCanvasIndex) {
@@ -149,12 +163,11 @@ const WindowCanvasNavigationControls = ({
   });
   const inputId = `canvas-idx-${windowId}`;
   return (
-    <Paper
+    <StyledPaper
       className={classNames(
-        targetProps.classes.controls,
         classes.container,
-        ns("canvas-nav"),
-        targetProps.classes.canvasNav,
+        // FIXME: make prefix configurable again once mirador 4 exports `ns` function
+        "mirador-canvas-nav",
         classes.canvasNav,
       )}
       elevation={0}
@@ -183,7 +196,8 @@ const WindowCanvasNavigationControls = ({
           <label
             className={classNames(
               classes.canvasPosition,
-              ns("canvas-position"),
+              // FIXME: make prefix configurable again once mirador 4 exports `ns` function
+              "mirador-canvas-position",
             )}
             htmlFor={inputId}
           >
@@ -248,7 +262,7 @@ const WindowCanvasNavigationControls = ({
           </>
         )}
       </div>
-    </Paper>
+    </StyledPaper>
   );
 };
 
@@ -271,12 +285,6 @@ WindowCanvasNavigationControls.propTypes = {
   setCanvasIndex: PropTypes.func.isRequired,
   setNextCanvas: PropTypes.func.isRequired,
   setPreviousCanvas: PropTypes.func.isRequired,
-  targetProps: PropTypes.shape({
-    classes: PropTypes.shape({
-      canvasNav: PropTypes.string.isRequired,
-      controls: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
   windowId: PropTypes.string.isRequired,
 };
 
