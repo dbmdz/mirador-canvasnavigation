@@ -166,6 +166,7 @@ const WindowCanvasNavigationControls = ({
     <StyledPaper
       className={classNames(
         classes.container,
+        // FIXME: make prefix configurable again once mirador 4 exports `ns` function
         "mirador-canvas-nav",
         classes.canvasNav,
       )}
