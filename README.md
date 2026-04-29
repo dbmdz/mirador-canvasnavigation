@@ -60,7 +60,7 @@ You can view an example configuration in [src/demo.js][demo-cfg].
 
 The available settings are:
 
-- `handleCanvasLabel`: A function that modifies the canvas label if needed, the default implementation does not change anything.
+- `handleCanvasLabel`: A function that modifies the canvas label if needed, the default implementation returns `canvasLabel` unchanged.
   Receives this information about the current window:
   ```
   {

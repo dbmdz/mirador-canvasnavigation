@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Fixed
 
+- Fixed default `handleCanvasLabel` to return a string instead of the input object
 - Externalized `react/jsx-runtime` and `react/jsx-dev-runtime` so the published bundle no longer inlines the JSX runtime via a dynamic `require("react")`
 
 ## [1.0.0](https://github.com/dbmdz/mirador-canvasnavigation/releases/tag/1.0.0) - 2026-04-23
