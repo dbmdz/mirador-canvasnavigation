@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ## Unreleased
 
+### Fixed
+
+- Fixed publishing
+
 ## [1.0.2](https://github.com/dbmdz/mirador-canvasnavigation/releases/tag/1.0.2) - 2026-05-15
 
 ### Changed
