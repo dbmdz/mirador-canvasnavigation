@@ -27,7 +27,9 @@ const classes = {
   canvasInput: `${PREFIX}-canvasInput`,
 };
 
-const StyledPaper = styled(Paper)(({ theme }) => ({
+const StyledPaper = styled(Paper, {
+  shouldForwardProp: (prop) => prop !== "numDigits",
+})(({ theme, numDigits }) => ({
   // We need to supply all the classes of the wrapped target component, otherwise MUI will
   // complain a lot
   [`&.${classes.canvasNav}`]: {
@@ -118,12 +120,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
     "&::-webkit-inner-spin-button": {
       appearance: "none",
     },
-    // Styles can be a function that accepts the component's props and which will be
-    // called anytime the component is updated, neat for dynamic styling
-    width: ({ currentCanvasIndex }) => {
-      const numDigits = Math.floor(Math.log10(currentCanvasIndex + 1) + 1);
-      return `${1.6 + numDigits * 0.3}rem`;
-    },
+    width: `${1.6 + numDigits * 0.3}rem`,
   },
 }));
 
@@ -172,6 +169,7 @@ const WindowCanvasNavigationControls = ({
       )}
       elevation={0}
       square
+      numDigits={Math.floor(Math.log10(currentCanvasIndex + 1) + 1)}
     >
       <div className={classes.canvasFooter}>
         <div className={classes.navContainer}>
