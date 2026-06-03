@@ -60,8 +60,7 @@
   "peerDependencies": {
     "mirador": "4.x",
     "react": "19.x",
-    "react-dom": "19.x",
-    "reselect": "^5.2.0"
+    "react-dom": "19.x"
   },
   "engines": {
     "npm": ">=11.0.0"
