@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ## Unreleased
 
+## [1.0.6](https://github.com/dbmdz/mirador-canvasnavigation/releases/tag/1.0.6) - 2026-06-09
+
 ### Fixed
 
 - Fixed padding of buttons
