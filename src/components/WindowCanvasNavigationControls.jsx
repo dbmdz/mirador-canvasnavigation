@@ -83,6 +83,7 @@ const StyledPaper = styled(Paper, {
     borderColor: "lightgrey",
     borderStyle: "solid",
     borderWidth: "0px 1px 0px 1px",
+    padding: "3px",
   },
 
   [`& .${classes.edgeButtonLeft}`]: {
@@ -178,7 +179,6 @@ const WindowCanvasNavigationControls = ({
             className={classNames(classes.squareButton, classes.edgeButtonLeft)}
             disabled={!hasPreviousCanvas}
             onClick={() => setCanvasIndex(0)}
-            size="small"
           >
             <FirstCanvasIcon />
           </MiradorMenuButton>
@@ -187,7 +187,6 @@ const WindowCanvasNavigationControls = ({
             className={classes.squareButton}
             disabled={!hasPreviousCanvas}
             onClick={setPreviousCanvas}
-            size="small"
           >
             <PreviousCanvasIcon />
           </MiradorMenuButton>
@@ -235,7 +234,6 @@ const WindowCanvasNavigationControls = ({
             className={classes.squareButton}
             disabled={!hasNextCanvas}
             onClick={setNextCanvas}
-            size="small"
           >
             <NextCanvasIcon />
           </MiradorMenuButton>
@@ -247,7 +245,6 @@ const WindowCanvasNavigationControls = ({
             )}
             disabled={!hasNextCanvas}
             onClick={() => setCanvasIndex(numCanvases - 1)}
-            size="small"
           >
             <LastCanvasIcon />
           </MiradorMenuButton>
