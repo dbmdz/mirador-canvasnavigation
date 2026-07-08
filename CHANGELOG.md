@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ## Unreleased
 
+### Fixed
+
+- Avoided barrel imports of MUI components
+
 ## [1.0.7](https://github.com/dbmdz/mirador-canvasnavigation/releases/tag/1.0.7) - 2026-06-24
 
 ### Changed
