@@ -1,10 +1,8 @@
-import {
-  ChevronLeft as PreviousCanvasIcon,
-  ChevronRight as NextCanvasIcon,
-  FirstPage as FirstCanvasIcon,
-  LastPage as LastCanvasIcon,
-} from "@mui/icons-material";
-import { Paper } from "@mui/material";
+import PreviousCanvasIcon from "@mui/icons-material/ChevronLeft";
+import NextCanvasIcon from "@mui/icons-material/ChevronRight";
+import FirstCanvasIcon from "@mui/icons-material/FirstPage";
+import LastCanvasIcon from "@mui/icons-material/LastPage";
+import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import classNames from "classnames";
 import { MiradorMenuButton } from "mirador";
