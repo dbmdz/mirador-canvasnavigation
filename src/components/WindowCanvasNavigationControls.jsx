@@ -5,7 +5,7 @@ import LastCanvasIcon from "@mui/icons-material/LastPage";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import classNames from "classnames";
-import { MiradorMenuButton } from "mirador";
+import { cssNs, MiradorMenuButton } from "mirador";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -162,8 +162,7 @@ const WindowCanvasNavigationControls = ({
     <StyledPaper
       className={classNames(
         classes.container,
-        // FIXME: make prefix configurable again once mirador 4 exports `ns` function
-        "mirador-canvas-nav",
+        cssNs("canvas-nav"),
         classes.canvasNav,
       )}
       elevation={0}
@@ -191,8 +190,7 @@ const WindowCanvasNavigationControls = ({
           <label
             className={classNames(
               classes.canvasPosition,
-              // FIXME: make prefix configurable again once mirador 4 exports `ns` function
-              "mirador-canvas-position",
+              cssNs("canvas-position"),
             )}
             htmlFor={inputId}
           >
