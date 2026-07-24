@@ -30,7 +30,8 @@ export default [
           const viewType = getWindowViewType(getState(), { windowId });
           const groupIndex =
             viewType === "single" ? index : Math.ceil(index / 2);
-          const newGroup = allGroupings?.[groupIndex];
+          const newGroup =
+            allGroupings?.[Math.min(groupIndex, allGroupings.length - 1)];
           const ids = (newGroup || []).map((c) => c.id);
           if (newGroup) {
             dispatch(setCanvas(windowId, ids[0], ids));
