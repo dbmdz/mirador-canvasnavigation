@@ -1,5 +1,6 @@
 export default {
   de: {
+    canvasLabel: "Label der aktuellen Seite",
     firstPage: "Erste Seite",
     lastPage: "Letzte Seite",
     nextPage: "Nächste Seite",
@@ -8,6 +9,7 @@ export default {
     scan: "Scan",
   },
   en: {
+    canvasLabel: "Label of the currect page",
     firstPage: "First page",
     lastPage: "Last page",
     nextPage: "Next page",
