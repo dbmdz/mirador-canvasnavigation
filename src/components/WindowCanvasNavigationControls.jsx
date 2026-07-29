@@ -246,13 +246,13 @@ const WindowCanvasNavigationControls = ({
           </MiradorMenuButton>
         </div>
       </div>
-      <div className={classes.canvasLabel}>
+      <label aria-label={t("canvasLabel")} className={classes.canvasLabel}>
         {canvasLbl && (
           <>
             {t("pageLabel")}: {canvasLbl}
           </>
         )}
-      </div>
+      </label>
     </StyledPaper>
   );
 };
