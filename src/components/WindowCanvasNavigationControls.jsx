@@ -125,7 +125,7 @@ const StyledPaper = styled(Paper, {
 
 const WindowCanvasNavigationControls = ({
   canvasId,
-  canvasLabel,
+  canvasLabel = "",
   config: { handleCanvasLabel = ({ canvasLabel }) => canvasLabel },
   currentCanvasIndex,
   hasNextCanvas,
@@ -257,13 +257,8 @@ const WindowCanvasNavigationControls = ({
   );
 };
 
-WindowCanvasNavigationControls.defaultProps = {
-  canvasId: undefined,
-  canvasLabel: "",
-};
-
 WindowCanvasNavigationControls.propTypes = {
-  canvasId: PropTypes.string,
+  canvasId: PropTypes.string.isRequired,
   canvasLabel: PropTypes.string,
   config: PropTypes.shape({
     handleCanvasLabel: PropTypes.func,
