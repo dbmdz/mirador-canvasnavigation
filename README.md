@@ -60,6 +60,9 @@ You can view an example configuration in [src/demo.js][demo-cfg].
 
 The available settings are:
 
+- `allowCanvasLabel`: A flag that disables the display of the canvas label
+- `allowFirstPage`: A flag that the display of the button for jumping to the first page
+- `allowLastPage`: A flag that the display of the button for jumping to the last page
 - `handleCanvasLabel`: A function that modifies the canvas label if needed, the default implementation returns `canvasLabel` unchanged.
   Receives this information about the current window:
   ```

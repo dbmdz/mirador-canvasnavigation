@@ -34,6 +34,17 @@ const config = {
         "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00034024/manifest",
       view: "single",
     },
+    {
+      canvasIndex: 8,
+      manifestId:
+        "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb00034024/manifest",
+      view: "single",
+      canvasNavigation: {
+        allowCanvasLabel: false,
+        allowFirstPage: false,
+        allowLastPage: false,
+      },
+    },
   ],
 };
 
