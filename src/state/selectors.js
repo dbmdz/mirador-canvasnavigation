@@ -2,6 +2,9 @@ import { getWindowConfig } from "mirador";
 import { createSelector } from "reselect";
 
 const defaultConfig = {
+  allowCanvasLabel: true,
+  allowFirstPage: true,
+  allowLastPage: true,
   handleCanvasLabel: ({ canvasLabel }) => canvasLabel,
 };
 

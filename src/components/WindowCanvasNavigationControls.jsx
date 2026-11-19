@@ -126,7 +126,12 @@ const StyledPaper = styled(Paper, {
 const WindowCanvasNavigationControls = ({
   canvasId,
   canvasLabel = "",
-  config: { handleCanvasLabel },
+  config: {
+    allowCanvasLabel,
+    allowFirstPage,
+    allowLastPage,
+    handleCanvasLabel,
+  },
   currentCanvasIndex,
   hasNextCanvas,
   hasPreviousCanvas,
@@ -171,14 +176,19 @@ const WindowCanvasNavigationControls = ({
     >
       <div className={classes.canvasFooter}>
         <div className={classes.navContainer}>
-          <MiradorMenuButton
-            aria-label={t("firstPage")}
-            className={classNames(classes.squareButton, classes.edgeButtonLeft)}
-            disabled={!hasPreviousCanvas}
-            onClick={() => setCanvasIndex(0)}
-          >
-            <FirstCanvasIcon />
-          </MiradorMenuButton>
+          {allowFirstPage && (
+            <MiradorMenuButton
+              aria-label={t("firstPage")}
+              className={classNames(
+                classes.squareButton,
+                classes.edgeButtonLeft,
+              )}
+              disabled={!hasPreviousCanvas}
+              onClick={() => setCanvasIndex(0)}
+            >
+              <FirstCanvasIcon />
+            </MiradorMenuButton>
+          )}
           <MiradorMenuButton
             aria-label={t("previousPage")}
             className={classes.squareButton}
@@ -233,26 +243,30 @@ const WindowCanvasNavigationControls = ({
           >
             <NextCanvasIcon />
           </MiradorMenuButton>
-          <MiradorMenuButton
-            aria-label={t("lastPage")}
-            className={classNames(
-              classes.squareButton,
-              classes.edgeButtonRight,
-            )}
-            disabled={!hasNextCanvas}
-            onClick={() => setCanvasIndex(numCanvases - 1)}
-          >
-            <LastCanvasIcon />
-          </MiradorMenuButton>
+          {allowLastPage && (
+            <MiradorMenuButton
+              aria-label={t("lastPage")}
+              className={classNames(
+                classes.squareButton,
+                classes.edgeButtonRight,
+              )}
+              disabled={!hasNextCanvas}
+              onClick={() => setCanvasIndex(numCanvases - 1)}
+            >
+              <LastCanvasIcon />
+            </MiradorMenuButton>
+          )}
         </div>
       </div>
-      <label aria-label={t("canvasLabel")} className={classes.canvasLabel}>
-        {canvasLbl && (
-          <>
-            {t("pageLabel")}: {canvasLbl}
-          </>
-        )}
-      </label>
+      {allowCanvasLabel && (
+        <label aria-label={t("canvasLabel")} className={classes.canvasLabel}>
+          {canvasLbl && (
+            <>
+              {t("pageLabel")}: {canvasLbl}
+            </>
+          )}
+        </label>
+      )}
     </StyledPaper>
   );
 };
@@ -261,6 +275,9 @@ WindowCanvasNavigationControls.propTypes = {
   canvasId: PropTypes.string.isRequired,
   canvasLabel: PropTypes.string,
   config: PropTypes.shape({
+    allowCanvasLabel: PropTypes.bool,
+    allowFirstPage: PropTypes.bool,
+    allowLastPage: PropTypes.bool,
     handleCanvasLabel: PropTypes.func,
   }).isRequired,
   currentCanvasIndex: PropTypes.number.isRequired,
