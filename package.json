@@ -58,7 +58,7 @@
     "vite": "^8.3.0"
   },
   "peerDependencies": {
-    "mirador": "4.x",
+    "mirador": "4.2",
     "react": "19.x",
     "react-dom": "19.x"
   },
