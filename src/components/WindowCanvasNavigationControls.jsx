@@ -126,7 +126,7 @@ const StyledPaper = styled(Paper, {
 const WindowCanvasNavigationControls = ({
   canvasId,
   canvasLabel = "",
-  config: { handleCanvasLabel = ({ canvasLabel }) => canvasLabel },
+  config: { handleCanvasLabel },
   currentCanvasIndex,
   hasNextCanvas,
   hasPreviousCanvas,
